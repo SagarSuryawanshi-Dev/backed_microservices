@@ -23,9 +23,7 @@ const userSchema = new mongoose.Schema<IUser>(
     phoneNumber: {
       type: String,
       required: true,
-      trim: true,
-      maxlength: 10,
-      minlength: 10,
+      trim: true
     },
     email: {
       type: String,
@@ -33,7 +31,7 @@ const userSchema = new mongoose.Schema<IUser>(
       trim: true,
       unique: true,
       lowercase: true,
-      match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/  
+      match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
     },
     password: {
       type: String,
@@ -50,8 +48,4 @@ const userSchema = new mongoose.Schema<IUser>(
   },
 );
 
-
-
-const User = mongoose.model<IUser>("User",userSchema);
-
-
+const User = mongoose.model<IUser>("User", userSchema);
